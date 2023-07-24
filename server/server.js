@@ -25,7 +25,7 @@ app.use('/book', bookRouter)
 // Move movie code into a router
 // Extract movieList and create a new route, just like we did for /book
   // /movie
-  const movieRouter = require('./routers/movie.router.js')
+  const movieRouter = require('./routers/movie.router.js') // we set movieRouter to the ./routers/movie.router.js url
 
   app.use('/movie', movieRouter) // The app.use as tageting the /movie url. 
                                 //  So when you go to the movie.router.js module.
