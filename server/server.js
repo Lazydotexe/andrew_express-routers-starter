@@ -25,12 +25,8 @@ app.use('/book', bookRouter)
 // Move movie code into a router
 // Extract movieList and create a new route, just like we did for /book
   // /movie
-const movieList = [];
-app.get('/movie', (req, res) => {
-  res.send(movieList);
-});
+  const movieRouter = require('./routers/movie.router.js')
 
-app.post('/movie', (req, res) => {
-  movieList.push(req.body);
-  res.sendStatus(200);
-});
+  app.use('/movie', movieRouter) // The app.use as tageting the /movie url. 
+                                //  So when you go to the movie.router.js module.
+                                // The router.post and .get will only need '/'
